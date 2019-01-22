@@ -38,7 +38,7 @@ class BurgerBuilder extends Component{
 
     removeIngredientHandler=(type)=>{
         let oldIngredient = {...this.state.ingredients};
-        if(oldIngredient(type) <= 0 ){
+        if(oldIngredient[type] <= 0 ){
             return;
         }
         oldIngredient[type] -= 1
@@ -53,6 +53,8 @@ class BurgerBuilder extends Component{
 
 
     render(){
+
+
         return(
             <Aux>
                <Burger
