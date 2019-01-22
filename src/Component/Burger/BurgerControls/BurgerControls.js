@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './BuildControls.css';
-import BuildControl from './BurgerControl/BurgerControl';
-const buildControls =()=>{
+import classes from './BurgerControls.css';
+import BurgerControl from './BurgerControl/BurgerControl';
+const burgerControls =(props)=>{
     const controls=[
         {label:'Salad',type:'salad'},
         {label:'Bacon',type:'bacon'},
@@ -11,14 +11,18 @@ const buildControls =()=>{
 
 
     return(
-        <div className={classes.BuildControls}>
+        <div className={classes.BurgerControls}>
         {
             controls.map((name,index)=>{
-                return <BuildControl key={name.type+index} type={name.type}>{name.label}</BuildControl>
+                return <BurgerControl 
+                key={name.type+index} 
+                added={() => props.addItem(name.type)}
+                remove={() => props.removeItem(name.type)}
+                >{name.label}</BurgerControl>
             })
         }
         </div>
     );
 }
 
-export default buildControls;
+export default burgerControls;

@@ -12,5 +12,7 @@ const Layout=(props)=>{
             <footer></footer>
         </Aux>
     );
+
+    
 }
 export default Layout;
