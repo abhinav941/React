@@ -1,12 +1,12 @@
 import React from 'react'
 import Aux from '../../../hoc/Aux';
+import Button from '../../../UI/Button/Button';
 
 const OrderSummary=(props)=>{
     const ingredientTrans = Object.keys(props.ingredient)
         .map(igKey=>{
             return <li key={igKey}> 
                 <span style={{textTransform:'capitalize'}}> {igKey} :{props.ingredient[igKey]}</span> 
-                
                 </li>
         })
     
@@ -17,6 +17,8 @@ const OrderSummary=(props)=>{
             <ul>
                 {ingredientTrans}
             </ul>
+            <Button btnType="Success" clicked={props.purchaseContinue}>Continue</Button>
+            <Button btnType="Danger" clicked={props.purchaseCancelled}>Cancel</Button>
         </Aux>
     );
 }

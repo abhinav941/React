@@ -1,0 +1,18 @@
+.Navigation{
+    width:100%;
+    height:56px;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgba(255, 187, 0, 0.931);
+    box-sizing: border-box;
+    z-index:90;
+    padding:0 20px;
+}
+.Navigation nav{
+    height: 100%;
+
+}
