@@ -1,17 +1,12 @@
 .NavigationItem{
     margin:0;
     box-sizing: border-box;
-    display:flex;
     align-items: center;
-    height: 100%;
 }
 
 .NavigationItem a{
     text-decoration: none;
-    padding: 16px 10px;
     color:black;
-    height:100%;
-    border-bottom: 4px solid transparent;
     display: block;
     box-sizing: border-box;
 }
@@ -19,6 +14,32 @@
 .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem .active{
-    border-bottom:4px solid red;
-    background-color: yellow
+    color:blue;
+}
+
+@media (min-width:500px){
+    .NavigationItem{
+        margin:0;
+        box-sizing: border-box;
+        display:flex;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .NavigationItem a{
+        text-decoration: none;
+        padding: 16px 10px;
+        color:black;
+        height:100%;
+        border-bottom: 4px solid transparent;
+        display: block;
+        box-sizing: border-box;
+    }
+    
+    .NavigationItem a:hover,
+    .NavigationItem a:active,
+    .NavigationItem .active{
+        border-bottom:4px solid red;
+        background-color: yellow
+    }
 }

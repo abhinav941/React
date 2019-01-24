@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
 import classes from './Layout.css';
 import Navigation from '../Navigation/Navigation';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
-const Layout=(props)=>{
-    return(
+class Layout extends Component {
+    state={
+        showSidedraw:true
+    }
+    closeBackdropHandler=()=>{
+        this.setState({
+            showSidedraw:false
+        })
+    }
+
+
+    render() {
+        return (
         <Aux>
-            <SideDrawer/>
-            <Navigation/>
+            <SideDrawer close={this.closeBackdropHandler} open={this.state.showSidedraw}/>
+            <Navigation />
             <main className={classes.main}>
-                {props.children}
+                {this.props.children}
             </main>
             <footer></footer>
-        </Aux>
-    );
-
-    
+        </Aux>);
+    }
 }
 export default Layout;

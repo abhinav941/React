@@ -8,7 +8,7 @@ const Navigation =()=>(
     <header className={classes.Navigation}>
         <div>Menu</div>
         <Logo/>
-        <nav>
+        <nav className={classes.DesktopOnly}>
             <Items/>
         </nav>
     </header>
