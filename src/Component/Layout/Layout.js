@@ -6,20 +6,23 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
     state={
-        showSidedraw:true
-    }
-    closeBackdropHandler=()=>{
-        this.setState({
-            showSidedraw:false
-        })
+        showSidedraw:false
     }
 
+    toggleButtonHandler=()=>{
+        const sidedraw= this.state.showSidedraw
+        this.setState({
+            showSidedraw:!sidedraw
+        })
+    }
 
     render() {
         return (
         <Aux>
-            <SideDrawer close={this.closeBackdropHandler} open={this.state.showSidedraw}/>
-            <Navigation />
+            <SideDrawer close={this.toggleButtonHandler} open={this.state.showSidedraw}/>
+            <Navigation toggleStats={this.showSidedraw}
+            toggleBtn={this.toggleButtonHandler}
+            />
             <main className={classes.main}>
                 {this.props.children}
             </main>
