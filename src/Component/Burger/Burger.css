@@ -1,13 +1,24 @@
 .Burger{
     width:100%;
     margin:auto;
-    height:250px;
-    overflow:scroll;
-    overflow-x: hidden;
+    height:550px;
+    overflow-y:scroll;
     text-align: center;
     font-weight: bold;
     font-size:1.2rem;
 }
+.Burger:hover{
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+::-webkit-scrollbar{
+    width:0;
+    background: rgba(255, 187, 0, 0.931);
+    border-radius: 34px;
+}
+
+
 @media(min-height:700px) and (min-width:1000px){
     .Burger{
         width:500px;

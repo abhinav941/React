@@ -14,9 +14,12 @@ const OrderSummary=(props)=>{
         <Aux>
             <h3>Here we go!</h3>
             <p>Your Order Summary is :</p>
-            <ul>
+            <ul style={{listStyle:'none'}}>
                 {ingredientTrans}
             </ul>
+            
+            <span ><strong>Pricing : </strong>  ${props.price}</span><br></br>
+
             <Button btnType="Success" clicked={props.purchaseContinue}>Continue</Button>
             <Button btnType="Danger" clicked={props.purchaseCancelled}>Cancel</Button>
         </Aux>
